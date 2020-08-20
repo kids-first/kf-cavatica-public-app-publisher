@@ -1,5 +1,6 @@
 import argparse
 from ruamel import yaml
+from ruamel.yaml.scalarstring import PreservedScalarString as pss
 import sys
 import pdb
 
@@ -48,7 +49,7 @@ if 'sbg:publisher' not in data:
     data['sbg:publisher'] = args.pub
 if args.tags:
     data['sbg:categories'] = []
-    for tag in args.tags.split(','):
+    for tag in sorted(args.tags.split(',')):
         data['sbg:categories'].append(tag)
 key_list = list(data.keys())
 if args.label:
@@ -59,15 +60,17 @@ if args.readme:
     rm = open(args.readme)
     rm_str = rm.read()
     rm.close()
+    # code from should improve readme appearance
+    pss_rm_str = pss(rm_str)
     key_list = list(data.keys())
     if 'doc' not in data:
         try:
-            data.insert(key_list.index('label')+1, 'doc', rm_str)
+            data.insert(key_list.index('label')+1, 'doc', pss_rm_str)
         except Exception as e:
             sys.stderr.write(str(e) + "\nFailed to add doc field after label field, trying after id\n")
-            data.insert(key_list.index('id')+1, 'doc', rm_str)
+            data.insert(key_list.index('id')+1, 'doc', pss_rm_str)
     else:
-        data['doc'] = rm_str
+        data['doc'] = pss_rm_str
 if args.id_name:
     key_list = list(data.keys())
     if 'id' not in data:
