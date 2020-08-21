@@ -28,7 +28,7 @@ parser.add_argument('-p', '--publisher', action='store', dest='pub', help='Publi
 ```
 
 ### Input tips
-1. `-r, --readme`: There is no need to copy in or write up a README and comprehensive doc section. The README can be fed to the script an it will automatically place it. Also, in the README, put the general workflow description first before the main header and logo - that way the public app preview will display properly
+1. `-r, --readme`: There is no need to copy in or write up a README and comprehensive doc section. The README can be fed to the script and it will automatically place it. Also, in the README, put the general workflow description first before the main header and logo - that way the public app preview will display properly
 1. `-n, --id-name`: Short app ID, should be `kfdrc-what-it-do-tool/workflow`
 1. `-l, --label`: User-friendly display name, like `Kids First DRC Alignment Workflow`
 1. `-t, --tags`: Keywords in csv string format that users will be able to search, like `DNA,ALIGNMENT`
