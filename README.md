@@ -2,10 +2,10 @@
   <img src="docs/kids_first_logo.svg" alt="Kids First repository logo" width="660px" />
 </p>
 <p align="center">
-  <a href="https://github.com/kids-first/kf-template-repo/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kids-first/kf-template-repo.svg?style=for-the-badge"></a>
+  <a href="https://github.com/kids-first/kf-cavatica-public-app-publisher/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kids-first/kf-cavatica-public-app-publisher.svg?style=for-the-badge"></a>
 </p>
 
-# Kids First Cavatica Public App Pubplisher
+# Kids First Cavatica Public App Publisher
 
 This repo contains a script to patch CWL tool and/or workflow scripts for public app use on Cavatica.
 It satisfies the requirements as laid out [here](https://www.notion.so/d3b/Cavatica-public-app-publishing-e8b8f28f0a2544ecbfe641855a8c1efb)
