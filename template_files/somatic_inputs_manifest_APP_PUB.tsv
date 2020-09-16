@@ -1,0 +1,15 @@
+id	name	keys
+5e9eff46e4b054952c25f68e	Homo_sapiens_assembly38.dict	reference_dict
+5e9eff46e4b054952c25f69d	Homo_sapiens_assembly38.fasta	reference_fasta
+5e9eff46e4b054952c25f6aa	Homo_sapiens_assembly38.fasta.fai	reference_fai
+5f3187d2e4b09d9a7b600588	hs38_chr.len	cfree_chr_len
+5f3594f5e4b0549560c73236	GRCh38.gencode.v31.CDS.merged.bed	lancet_calling_interval_bed
+5f3187d1e4b09d9a7b600564	af-only-gnomad.hg38.vcf.gz	mutect2_af_only_gnomad_vcf
+5f3187d1e4b09d9a7b600568	af-only-gnomad.hg38.vcf.gz.tbi	mutect2_af_only_gnomad_tbi
+5f3187d2e4b09d9a7b60057b	hg38_strelka.bed.gz	hg38_strelka_bed
+5f3187d2e4b09d9a7b600581	hg38_strelka.bed.gz.tbi	hg38_strelka_tbi
+5f3187d2e4b09d9a7b600585	homo_sapiens_vep_93_GRCh38_convert_cache.tar.gz	vep_cache
+5f3187d2e4b09d9a7b60058c	refFlat_HG38.txt	cnvkit_annotation_file
+5f3187d2e4b09d9a7b600594	small_exac_common_3.hg38.vcf.gz	mutect2_exac_common_vcf
+5f3187d3e4b09d9a7b600599	small_exac_common_3.hg38.vcf.gz.tbi	mutect2_exac_common_tbi
+5f35956fe4b0549560c733c5	wgs_canonical_calling_regions.hg38.bed	wgs_calling_interval_list
