@@ -1,8 +1,8 @@
 id	name	keys
-5d8bb21fe4b0950c4028f853	STAR_GENCODE27.tar.gz	STARgenome
-5d8bb21fe4b0950c4028f851	RSEM_GENCODE27.tar.gz	RSEMgenome
-5d8bb21fe4b0950c4028f855	GRCh38.primary_assembly.genome.fa	reference_fasta
-5d8bb21fe4b0950c4028f84f	gencode.v27.primary_assembly.annotation.gtf	gtf_anno
-5d8bb21fe4b0950c4028f854	GRCh38_v27_CTAT_lib_Feb092018.plug-n-play.tar.gz	FusionGenome
-5d8bb21fe4b0950c4028f852	gencode.v27.primary_assembly.RNAseQC.gtf	RNAseQC_GTF
-5d8bb21fe4b0950c4028f850	gencode.v27.kallisto.index	kallisto_idx
+5d9c8d04e4b0950cce147f8c	GRCh38.primary_assembly.genome.fa	reference_fasta
+5d9c8d04e4b0950cce147f94	GRCh38_v27_CTAT_lib_Feb092018.plug-n-play.tar.gz	FusionGenome
+5d9c8d04e4b0950cce147f93	RSEM_GENCODE27.tar.gz	RSEMgenome
+5d9c8d04e4b0950cce147f92	STAR_GENCODE27.tar.gz	STARgenome
+5d9c8d04e4b0950cce147f90	gencode.v27.kallisto.index	kallisto_idx
+5d9c8d04e4b0950cce147f91	gencode.v27.primary_assembly.RNAseQC.gtf	RNAseQC_GTF
+5d9c8d04e4b0950cce147f95	gencode.v27.primary_assembly.annotation.gtf	gtf_anno
