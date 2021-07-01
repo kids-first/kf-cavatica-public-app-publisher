@@ -18,25 +18,32 @@ args = parser.parse_args()
 
 def update_file_paths(manifest, yaml_obj):
     mf = open(manifest)
-    head = next(mf)
+    head = next(mf) # fields: fid,name,key,sfids,snames
     # see if more than one file exists for input keys - will determine if values is to be File or File[]
     in_dict = {}
     for entry in mf:
-        info = entry.rstrip('\n').split('\t')
-        if info[2] not in in_dict:
-            in_dict[info[2]] = {}
-        in_dict[info[2]][info[0]] = info[1]
-    for key in in_dict:
-        if len(in_dict[key].keys()) > 1:
-            yaml_obj['inputs'][key]['sbg:suggestedValue'] = []
-            for fid in in_dict[key]:
-                yaml_obj['inputs'][key]['sbg:suggestedValue'].append({'class': 'File', 'path': fid, 'name': in_dict[key][fid]})
+        info = [None] * 5
+        data = entry.rstrip('\n').split('\t')
+        info[:len(data)] = data
+        fid,name,key,sfids,snames = info
+        if sfids in [None,"None"]:
+            dat = {"class":"File","path":fid,"name":name}
         else:
-            yaml_obj['inputs'][key]['sbg:suggestedValue'] = {}
-            fid = next(iter(in_dict[key]))
-            yaml_obj['inputs'][key]['sbg:suggestedValue'] = {'class': 'File', 'path': fid, 'name': in_dict[key][fid]}
-
-
+            assert len(sfids.split(',')) == len(snames.split(',')), "Lengths of secondaryFile IDs and names MUST BE equal"
+            sfidsList = sfids.split(',')
+            snamesList = snames.split(',')
+            sfileList = []
+            for i in range(len(sfidsList)):
+                sfileList.append({"class":"File","path":sfidsList[i],"name":snamesList[i]})
+            dat = {"class":"File","path":fid,"name":name,"secondaryFiles":sfileList}
+        if key not in in_dict:
+            in_dict[key] = []
+        in_dict[key].append(dat)
+        for key in in_dict:
+            if len(in_dict[key]) == 1:
+                yaml_obj['inputs'][key]["sbg:suggestedValue"] = in_dict[key][0]
+            else:
+                yaml_obj['inputs'][key]["sbg:suggestedValue"] = in_dict[key]
 
 # round tripper preservers order and formatting of keys and values
 data = yaml.load(open(args.cwl), yaml.RoundTripLoader, preserve_quotes=True)
@@ -78,4 +85,4 @@ if args.id_name:
     else:
         data['id'] = args.id_name
 
-yaml.dump(data, sys.stdout, Dumper=yaml.RoundTripDumper)
+yaml.dump(data, sys.stdout, Dumper=yaml.RoundTripDumper, default_flow_style=False)

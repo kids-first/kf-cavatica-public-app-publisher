@@ -1,0 +1,3 @@
+id	name	keys	sfids	snames
+60639019357c3a53540ca7e7	Homo_sapiens_assembly38.dict	reference_dict
+60639014357c3a53540ca7a3	Homo_sapiens_assembly38.fasta	reference_fasta	60639016357c3a53540ca7af	Homo_sapiens_assembly38.fasta.fai
