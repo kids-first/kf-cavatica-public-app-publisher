@@ -32,7 +32,7 @@ parser.add_argument('-p', '--publisher', action='store', dest='pub', help='Publi
 1. `-n, --id-name`: Short app ID, should be `kfdrc-what-it-do-tool/workflow`
 1. `-l, --label`: User-friendly display name, like `Kids First DRC Alignment Workflow`
 1. `-t, --tags`: Keywords in csv string format that users will be able to search, like `DNA,ALIGNMENT`
-1. `-f, --files`: tsv file manifest with file IDs, file names, cwl input references, and, optionally, any secondaryFile information. The fields for secondaryFile information also accepts comma-separate lists for files that have multiple secondaryFiles. If your file has no secondaryFiles, you can leave the snames and sfids fields empty or simply write `None`. Use `template_files/align_inputs_manifest_APP_PUB.tsv` as an example. If input is an array, just put one per line, using same input key. If order matters, then order them in the correct way
+1. `-f, --files`: tsv file manifest with file IDs, file names, cwl input references, and, optionally, any secondaryFile information. The fields for secondaryFile information also accepts comma-separated lists for files that have multiple secondaryFiles. If your file has no secondaryFiles, you can leave the snames and sfids fields empty or simply write `None`. Use `template_files/align_inputs_manifest_APP_PUB.tsv` as an example. If input is an array, just put one per line, using same input key. If order matters, then order them in the correct way
 1. `-p, --publisher`: simple identifier of center, likely `KFDRC`, unless it;s another center
 
 ### General tips
