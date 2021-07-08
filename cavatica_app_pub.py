@@ -11,7 +11,7 @@ parser.add_argument('-r', '--readme', action='store', dest='readme', help='Readm
 parser.add_argument('-n', '--id-name', action='store', dest='id_name', help='Short app ID link name to use, i.e. kfdrc-align-wf', required=False)
 parser.add_argument('-l', '--label', action='store', dest='label', help='User-friendly label to add to tool/workflow cwl, if needed', required=False)
 parser.add_argument('-t', '--tags', action='store', dest='tags', help='Seven bridges tags file, as csv string, ex RNASEQ,FUSION', required=False)
-parser.add_argument('-f', '--files', action='store', dest='files', help='Cavatica-style tsv manifest with file ID, file name, and associated cwl input key', required=False)
+parser.add_argument('-f', '--files', action='store', dest='files', help='Cavatica-style tsv manifest with file ID, file name, associated cwl input key, and, optionally, secondaryFile names and IDs', required=False)
 parser.add_argument('-p', '--publisher', action='store', dest='pub', help='Publisher name', required=False, default="KFDRC")
 args = parser.parse_args()
 
