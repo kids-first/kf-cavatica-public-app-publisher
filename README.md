@@ -23,7 +23,7 @@ parser.add_argument('-r', '--readme', action='store', dest='readme', help='Readm
 parser.add_argument('-n', '--id-name', action='store', dest='id_name', help='Short app ID link name to use, i.e. kfdrc-align-wf', required=False)
 parser.add_argument('-l', '--label', action='store', dest='label', help='User-friendly label to add to tool/workflow cwl, if needed', required=False)
 parser.add_argument('-t', '--tags', action='store', dest='tags', help='Seven bridges tags file, as csv string, ex RNASEQ,FUSION', required=False)
-parser.add_argument('-f', '--files', action='store', dest='files', help='Cavatica-style tsv manifest with file ID, file name, and associated cwl input key', required=False)
+parser.add_argument('-f', '--files', action='store', dest='files', help='Cavatica-style tsv manifest with file ID, file name, associated cwl input key, and, optionally, secondaryFile name and IDs', required=False)
 parser.add_argument('-p', '--publisher', action='store', dest='pub', help='Publisher name', required=False, default="KFDRC")
 ```
 
@@ -32,7 +32,7 @@ parser.add_argument('-p', '--publisher', action='store', dest='pub', help='Publi
 1. `-n, --id-name`: Short app ID, should be `kfdrc-what-it-do-tool/workflow`
 1. `-l, --label`: User-friendly display name, like `Kids First DRC Alignment Workflow`
 1. `-t, --tags`: Keywords in csv string format that users will be able to search, like `DNA,ALIGNMENT`
-1. `-f, --files`: tsv file manifest with file IDs, file names, and cwl input references. Use `template_files/align_inputs_manifest_APP_PUB.tsv` as an example. If input is an array, just put one per line, usi ng same input key. If order matters, then order them in the correct way
+1. `-f, --files`: tsv file manifest with file IDs, file names, cwl input references, and, optionally, any secondaryFile information. The fields for secondaryFile information also accepts comma-separate lists for files that have multiple secondaryFiles. If your file has no secondaryFiles, you can leave the snames and sfids fields empty or simply write `None`. Use `template_files/align_inputs_manifest_APP_PUB.tsv` as an example. If input is an array, just put one per line, using same input key. If order matters, then order them in the correct way
 1. `-p, --publisher`: simple identifier of center, likely `KFDRC`, unless it;s another center
 
 ### General tips
