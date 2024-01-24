@@ -1,8 +1,7 @@
 import argparse
-from ruamel import yaml
+from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import PreservedScalarString as pss
 import sys
-import pdb
 
 
 parser = argparse.ArgumentParser()
@@ -46,7 +45,9 @@ def update_file_paths(manifest, yaml_obj):
                 yaml_obj['inputs'][key]["sbg:suggestedValue"] = in_dict[key]
 
 # round tripper preservers order and formatting of keys and values
-data = yaml.load(open(args.cwl), yaml.RoundTripLoader, preserve_quotes=True)
+yaml = YAML(typ='rt')
+yaml.preserve_quotes = True
+data = yaml.load(open(args.cwl))
 if args.files:
     update_file_paths(args.files, data)
 # check for license, pub
@@ -84,5 +85,7 @@ if args.id_name:
         data.insert(key_list.index('class')+1, 'id', args.id_name)
     else:
         data['id'] = args.id_name
-
-yaml.dump(data, sys.stdout, Dumper=yaml.RoundTripDumper, default_flow_style=False)
+ymlo = YAML()
+ymlo.width = 128
+ymlo.default_flow_style=False
+ymlo.dump(data, sys.stdout)
